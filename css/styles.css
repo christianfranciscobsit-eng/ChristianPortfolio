@@ -1,0 +1,71 @@
+/* =============================================
+   Shared Styles — Christian Francisco Portfolio
+   ============================================= */
+
+/* Material Symbols */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Base body */
+body {
+    background-color: #f6faff;
+    color: #141d23;
+}
+
+/* ── Home ── */
+.perspective-grid {
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+}
+
+.parallax-target {
+    transition: transform 0.1s cubic-bezier(0, 0, 0, 1);
+}
+
+/* ── Projects ── */
+.project-card:hover .project-image {
+    transform: scale(1.02);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Project Detail ── */
+.glass-effect {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.project-hero-clip {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+
+/* ── Contact ── */
+input:focus,
+textarea:focus {
+    outline: none;
+    border-bottom-color: #006d35 !important;
+}
+
+.form-underline {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Reveal on Scroll (shared) ── */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+/* Projects page uses .active */
+.reveal-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contact page uses .visible */
+.reveal-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

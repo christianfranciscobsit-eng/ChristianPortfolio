@@ -1,0 +1,316 @@
+<!-- Project Detail: Portfolio - Christian Francisco -->
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Christian Francisco</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link href="css/styles.css" rel="stylesheet" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="js/tailwind.config.js"></script>
+</head>
+
+<body class="antialiased overflow-x-hidden selection:bg-secondary selection:text-white">
+
+  <!-- ===== TOP NAV ===== -->
+  <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-container-max mx-auto bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
+
+    <a class="font-headline-md text-headline-md font-bold text-primary" href="index.html">
+      Christian Francisco
+    </a>
+
+    <div class="hidden md:flex gap-gutter items-center">
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="index.html">Home</a>
+      <a class="font-body-md text-body-md text-primary font-bold border-b-2 border-secondary hover:text-secondary transition-colors duration-200" href="projects.html">Projects</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="contact.html">Contact</a>
+      <button class="ml-4 px-6 py-2 bg-primary text-on-primary font-label-md text-label-md rounded active:scale-95 transition-all hover:bg-secondary">Hire Me</button>
+    </div>
+
+    <button class="md:hidden text-primary">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+
+  </nav>
+  <!-- ===== END TOP NAV ===== -->
+
+
+  <main class="pt-20">
+
+    <!-- ===== PROJECT HERO ===== -->
+    <header class="relative w-full h-[716px] md:h-[870px] overflow-hidden bg-surface-container-high">
+
+      <div class="absolute inset-0 z-10 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+
+      <div
+        class="w-full h-full bg-cover bg-center"
+        style="background-image: url('images/projects/ds.png')"
+      ></div>
+
+      <div class="absolute bottom-0 left-0 w-full px-margin-mobile md:px-margin-desktop pb-stack-lg z-20">
+        <div class="max-w-container-max mx-auto">
+          <div class="flex flex-col gap-stack-sm">
+            <span class="font-label-md text-label-md text-secondary tracking-widest uppercase">
+              Web Design • Personal Branding
+            </span>
+            <h1 class="font-display-mobile md:font-display text-display-mobile md:text-display text-primary max-w-4xl">
+              Portfolio Website
+            </h1>
+          </div>
+        </div>
+      </div>
+
+    </header>
+    <!-- ===== END PROJECT HERO ===== -->
+
+
+    <!-- ===== PROJECT OVERVIEW ===== -->
+    <section class="px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+
+        <!-- Left Sidebar: Metadata -->
+        <div class="md:col-span-4 flex flex-col gap-stack-md order-2 md:order-1">
+          <div class="p-8 bg-surface-container-low rounded-xl border border-outline-variant/20 flex flex-col gap-6">
+
+            <div>
+              <h4 class="font-label-md text-label-md text-on-surface-variant mb-2">Role</h4>
+              <p class="font-body-md text-body-md text-primary">Designer &amp; Developer</p>
+            </div>
+
+            <div class="h-px bg-outline-variant/30"></div>
+
+            <div>
+              <h4 class="font-label-md text-label-md text-on-surface-variant mb-2">Timeline</h4>
+              <p class="font-body-md text-body-md text-primary">2024</p>
+            </div>
+
+            <div class="h-px bg-outline-variant/30"></div>
+
+            <div>
+              <h4 class="font-label-md text-label-md text-on-surface-variant mb-2">Technologies</h4>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="px-3 py-1 bg-surface-container-highest text-primary font-label-md text-label-md rounded">HTML</span>
+                <span class="px-3 py-1 bg-surface-container-highest text-primary font-label-md text-label-md rounded">Tailwind CSS</span>
+                <span class="px-3 py-1 bg-surface-container-highest text-primary font-label-md text-label-md rounded">JavaScript</span>
+              </div>
+            </div>
+
+            <div class="mt-4 flex flex-col gap-3">
+              <a class="flex items-center justify-center gap-2 w-full py-4 bg-primary text-on-primary font-label-md text-label-md rounded hover:bg-secondary transition-all active:scale-95" href="index.html" target="_blank" rel="noopener noreferrer">
+                Live Preview <span class="material-symbols-outlined text-sm">open_in_new</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right: Main Content -->
+        <div class="md:col-span-8 order-1 md:order-2 flex flex-col gap-stack-lg">
+
+          <!-- Vision -->
+          <div class="flex flex-col gap-stack-md">
+            <h2 class="font-headline-lg text-headline-lg text-primary">The Vision</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">
+              This personal portfolio was built to showcase my skills, projects, and professional
+              identity as a designer and developer. The goal was to create a clean, minimal,
+              and memorable digital presence.
+            </p>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">
+              Every design decision was intentional — from the typography and color palette
+              to the layout and micro-interactions — to communicate professionalism and
+              creative confidence.
+            </p>
+          </div>
+
+          <!-- Feature Highlights Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md mt-4">
+
+            <div class="md:col-span-2 relative h-96 bg-surface-container rounded-xl overflow-hidden group">
+              <div
+                class="absolute inset-0 transition-transform duration-700 group-hover:scale-105 bg-cover bg-center"
+                style="background-image: url('images/projects/tropaa.png')"
+              ></div>
+              <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/60 to-transparent">
+                <h3 class="font-headline-md text-headline-md text-white">Graduation</h3>
+                <p class="font-body-md text-body-md text-white/80">Consistent and scalable visual language.</p>
+              </div>
+            </div>
+
+            <div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 flex flex-col gap-4">
+              <span class="material-symbols-outlined text-secondary text-4xl">palette</span>
+              <h4 class="font-headline-md text-headline-md text-primary">Elevated Minimalism</h4>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Clean aesthetic with purposeful use of whitespace, typography, and subtle animations.
+              </p>
+            </div>
+
+            <div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10 flex flex-col gap-4">
+              <span class="material-symbols-outlined text-secondary text-4xl">devices</span>
+              <h4 class="font-headline-md text-headline-md text-primary">Fully Responsive</h4>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Designed mobile-first and optimized for all screen sizes from phone to desktop.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Process Timeline -->
+          <div class="flex flex-col gap-stack-md mt-stack-lg">
+            <h2 class="font-headline-lg text-headline-lg text-primary">The Process</h2>
+
+            <div class="space-y-12">
+
+              <div class="flex gap-6">
+                <div class="flex flex-col items-center">
+                  <div class="w-12 h-12 rounded-full border-2 border-secondary flex items-center justify-center font-bold text-secondary">01</div>
+                  <div class="w-0.5 h-full bg-outline-variant/30 my-2"></div>
+                </div>
+                <div class="pb-8">
+                  <h4 class="font-headline-md text-headline-md text-primary mb-2">Concept &amp; Branding</h4>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Defined the personal brand identity — tone, color system, typography, and
+                    overall aesthetic direction before writing a single line of code.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-6">
+                <div class="flex flex-col items-center">
+                  <div class="w-12 h-12 rounded-full border-2 border-secondary flex items-center justify-center font-bold text-secondary">02</div>
+                  <div class="w-0.5 h-full bg-outline-variant/30 my-2"></div>
+                </div>
+                <div class="pb-8">
+                  <h4 class="font-headline-md text-headline-md text-primary mb-2">Design &amp; Layout</h4>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Designed each page layout with a focus on hierarchy, readability, and
+                    visual flow that guides the visitor naturally through the content.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-6">
+                <div class="flex flex-col items-center">
+                  <div class="w-12 h-12 rounded-full border-2 border-secondary flex items-center justify-center font-bold text-secondary">03</div>
+                </div>
+                <div>
+                  <h4 class="font-headline-md text-headline-md text-primary mb-2">Build &amp; Polish</h4>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Coded with HTML, Tailwind CSS, and vanilla JavaScript. Added micro-interactions
+                    and scroll animations for a polished, professional feel.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- ===== END PROJECT OVERVIEW ===== -->
+
+
+    <!-- ===== MORE PROJECTS ===== -->
+    <section class="px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto border-t border-outline-variant/20">
+
+      <div class="flex justify-between items-end mb-stack-lg">
+        <div class="flex flex-col gap-2">
+          <span class="font-label-md text-label-md text-on-surface-variant">Next Step</span>
+          <h2 class="font-headline-lg text-headline-lg text-primary">Explore More Projects</h2>
+        </div>
+        <a class="hidden md:flex items-center gap-2 font-label-md text-label-md text-secondary group" href="projects.html">
+          View All <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+
+        <!-- Card 1: ABBE Website -->
+        <a class="group block" href="project-detail.html">
+          <div class="relative aspect-video rounded-xl overflow-hidden bg-surface-container-high mb-6">
+            <div
+              class="absolute inset-0 transition-transform duration-700 group-hover:scale-105 bg-cover bg-center"
+              style="background-image: url('images/projects/AbbeWeb.jpeg')"
+            ></div>
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-headline-md text-headline-md text-primary group-hover:text-secondary transition-colors">ABBE Website</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">Corporate / B2B IT Solutions</p>
+            </div>
+            <span class="material-symbols-outlined text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">north_east</span>
+          </div>
+        </a>
+
+        <!-- Card 2: ABR Capstone -->
+        <a class="group block" href="project-detail-abr.html">
+          <div class="relative aspect-video rounded-xl overflow-hidden bg-surface-container-high mb-6">
+            <div
+              class="absolute inset-0 transition-transform duration-700 group-hover:scale-105 bg-cover bg-center"
+              style="background-image: url('images/projects/ABRDiagnostic.jpeg')"
+            ></div>
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-headline-md text-headline-md text-primary group-hover:text-secondary transition-colors">ABR Capstone Project</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">Research &amp; Development</p>
+            </div>
+            <span class="material-symbols-outlined text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">north_east</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+    <!-- ===== END MORE PROJECTS ===== -->
+
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-primary text-on-primary">
+      <div class="max-w-container-max mx-auto text-center flex flex-col items-center gap-stack-md">
+        <h2 class="font-display-mobile md:font-display text-display-mobile md:text-display max-w-3xl">
+          Interested in working together?
+        </h2>
+        <p class="font-body-lg text-body-lg text-on-primary-container max-w-2xl">
+          I'm currently available for freelance projects and full-time creative opportunities.
+          Let's build something exceptional.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 mt-4">
+          <a href="contact.html" class="inline-block px-10 py-5 bg-secondary text-white font-label-md text-label-md rounded active:scale-95 transition-transform hover:brightness-110">
+            Get In Touch
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ===== END CTA SECTION ===== -->
+
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="w-full py-stack-lg px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-stack-md max-w-container-max mx-auto bg-surface border-t border-outline-variant/20">
+    <div class="flex flex-col items-center md:items-start gap-2">
+      <div class="font-headline-md text-headline-md text-primary">Portfolio</div>
+      <p class="font-label-md text-label-md text-on-surface-variant">© 2026 Christian Francisco. Elevated Minimalism.</p>
+    </div>
+    <div class="flex gap-gutter">
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="https://www.linkedin.com/in/christian-francisco-38720b393" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="https://www.facebook.com/Christian.Francisco.Manalang/" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="https://www.instagram.com/muddyyyy2/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+  </footer>
+  <!-- ===== END FOOTER ===== -->
+
+  <script src="js/project-detail.js"></script>
+</body>
+</html>
