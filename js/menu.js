@@ -1,3 +1,6 @@
+document.documentElement.classList.add('page-loading');
+document.body.style.overflow = 'hidden';
+
 document.addEventListener('DOMContentLoaded', () => {
   const toggles = document.querySelectorAll('[data-nav-toggle]');
 
@@ -13,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!expanded) {
         // Show the mobile menu
+        links.classList.remove('hidden');
+        links.classList.add('flex');
         links.style.display = 'flex';
         links.style.flexDirection = 'column';
         links.style.position = 'absolute';
@@ -25,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         links.style.zIndex = '60';
       } else {
         // Hide the mobile menu
+        links.classList.add('hidden');
+        links.classList.remove('flex');
         links.style.display = '';
         links.style.flexDirection = '';
         links.style.position = '';
@@ -38,4 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+});
+
+window.addEventListener('load', () => {
+  const loader = document.querySelector('.page-loader');
+
+  setTimeout(() => {
+    if (loader) {
+      loader.classList.add('hidden');
+    }
+    document.documentElement.classList.remove('page-loading');
+    document.body.style.overflow = '';
+  }, 500);
 });

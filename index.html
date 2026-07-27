@@ -23,6 +23,19 @@
 
 <body class="bg-background text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
 
+  <div class="page-loader">
+    <div class="loader">
+      <span><span></span><span></span><span></span><span></span></span>
+      <div class="base">
+        <span></span>
+        <div class="face"></div>
+      </div>
+    </div>
+    <div class="longfazers">
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
   <!-- ===== TOP NAV ===== -->
   <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30">
 
@@ -32,6 +45,8 @@
 
     <div class="hidden md:flex items-center gap-stack-lg" data-nav-links>
       <a class="font-body-md text-body-md text-primary font-bold border-b-2 border-secondary hover:text-secondary transition-colors duration-200" href="index.html">Home</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="./expertise.html">Expertise</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="./recognition.html">Recognition</a>
       <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="projects.html">Projects</a>
       <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="contact.html">Contact</a>
     </div>
@@ -44,7 +59,7 @@
   <!-- ===== END TOP NAV ===== -->
 
 
-  <main class="pt-32">
+  <main class="pt-[120px]">
 
     <!-- ===== HERO SECTION ===== -->
     <section class="max-w-container-max mx-auto px-margin-desktop mb-section-gap overflow-hidden">
@@ -77,13 +92,21 @@
 
         <!-- Right: Photo -->
         <div class="col-span-12 md:col-span-4 lg:col-span-5 relative mt-12 md:mt-0">
-          <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl relative group">
-            <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-            <img
-              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
-              src="images/projects/tians.png"
-              alt="Professional portrait of Christian Francisco"
-            />
+          <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl relative">
+            <div class="card-swap-container" aria-label="Animated stack of profile cards">
+              <div class="card-swap-item">
+                <img src="images/projects/tians.png" alt="Professional portrait of Christian Francisco" />
+              </div>
+              <div class="card-swap-item">
+                <img src="images/projects/Francisco, Christian.png" alt="Professional portrait of Christian Francisco" />
+              </div>
+              <div class="card-swap-item">
+                <img src="images/projects/Christ.png" alt="Professional portrait of Christian Francisco" />
+              </div>
+              <div class="card-swap-item">
+                <img src="images/projects/Yarn.png" alt="Professional portrait of Christian Francisco" />
+              </div>
+            </div>
           </div>
 
           <!-- Badge -->

@@ -1,6 +1,6 @@
 {
   // Live Server settings
-  "liveServer.settings.port": 5500,
+  "liveServer.settings.port": 5501,
   "liveServer.settings.root": "/",
   "liveServer.settings.CustomBrowser": "chrome",
   "liveServer.settings.file": "index.html"
