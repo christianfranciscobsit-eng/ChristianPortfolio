@@ -618,3 +618,143 @@ textarea:focus {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Character image: ensure responsive sizing and cap height on small screens */
+.character-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 640px) {
+    .character-img {
+        max-height: 60vh;
+        width: auto;
+    }
+}
+
+/* Hero section responsive tweaks */
+.hero-section {
+    overflow: visible;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 62vh !important;
+        padding-top: 8px !important;
+    }
+    .hero-section .shapegrid-canvas {
+        display: none !important;
+    }
+    .hero-bg-subtitle {
+        font-size: 28px !important;
+        line-height: 1 !important;
+    }
+    .hero-bg-title {
+        font-size: 40px !important;
+        line-height: 1 !important;
+    }
+    .hero-section .relative.z-30 {
+        translate: 0 0 !important;
+    }
+}
+
+/* Hero background wrapper: contain and responsively scale/hide big text */
+.hero-bg-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.hero-bg-subtitle {
+    font-size: clamp(28px, 6vw, 140px) !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.hero-bg-title {
+    font-size: clamp(36px, 10vw, 180px) !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+@media (max-width: 420px) {
+    .hero-bg-subtitle,
+    .hero-bg-title {
+        display: none !important;
+    }
+}
+
+    /* Global mobile adjustments for better responsive layout */
+    @media (max-width: 640px) {
+        /* Reduce container padding and constrain width */
+        .container,
+        .max-w-container-max {
+            padding-left: 16px !important;
+            padding-right: 16px !important;
+            max-width: 100% !important;
+        }
+
+        nav {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+
+        /* Hero tweaks */
+        .hero-section {
+            padding-top: 8px !important;
+            min-height: 56vh !important;
+        }
+
+        .hero-bg-wrapper {
+            transform: translateY(-6px);
+        }
+
+        .character-img {
+            max-height: 50vh !important;
+            width: auto !important;
+        }
+
+        /* Gallery: use two columns on small screens for nicer layout */
+        .grid.grid-cols-1.md\:grid-cols-4 {
+            grid-template-columns: repeat(2, 1fr) !important;
+            grid-auto-rows: auto !important;
+            gap: 12px !important;
+        }
+
+        /* Ensure items that span columns adjust correctly */
+        .md\:col-span-2 {
+            grid-column: span 2 / span 2 !important;
+        }
+
+        .grid img,
+        .group img {
+            width: 100% !important;
+            height: auto !important;
+            object-fit: cover !important;
+        }
+
+        /* Hide animated ticker to reduce clutter */
+        .ticker-animation {
+            display: none !important;
+        }
+
+        /* Footer spacing and stacking */
+        footer {
+            padding: 16px !important;
+            gap: 12px !important;
+            align-items: center !important;
+            text-align: center;
+        }
+
+        /* Tighter typography */
+        h1, h2, h3, h4 {
+            line-height: 1.08 !important;
+        }
+    }
