@@ -13,6 +13,48 @@
 body {
     background-color: #f6faff;
     color: #141d23;
+    margin: 0;
+}
+
+.hero-rotating-title {
+    display: inline-block;
+    transition: opacity 0.35s ease;
+    opacity: 1;
+    text-shadow: 0 10px 24px rgba(224, 42, 47, 0.18);
+}
+
+.hero-cursor {
+    display: inline-block;
+    margin-left: 0.45rem;
+    animation: blink-cursor 1.6s ease-in-out infinite;
+    color: #af101a;
+}
+
+@keyframes blink-cursor {
+    0%, 20% { opacity: 1; }
+    40%, 100% { opacity: 0.2; }
+}
+
+@keyframes ticker-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.ticker-animation {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker-scroll 15s linear infinite;
+}
+
+.shapegrid-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+::selection {
+    background-color: #af101a;
+    color: #ffffff;
 }
 
 .page-loader {

@@ -79,6 +79,9 @@ tailwind.config = {
                 "headline-lg-mobile": ["Plus Jakarta Sans"],
                 "headline-lg": ["Plus Jakarta Sans"],
                 "display": ["Plus Jakarta Sans"],
+                "display-xl": ["Anton"],
+                "label-mono": ["Geist"],
+                "headline-lg": ["Plus Jakarta Sans"],
                 "body-md": ['"Source Serif 4"']
             },
             fontSize: {

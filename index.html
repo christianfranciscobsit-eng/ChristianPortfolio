@@ -9,6 +9,7 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;700&family=Geist&display=swap" rel="stylesheet" />
 
   <!-- Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
@@ -21,7 +22,7 @@
   <script src="js/tailwind.config.js"></script>
 </head>
 
-<body class="bg-background text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<body class="bg-background text-on-background selection:bg-primary selection:text-white">
 
   <div class="page-loader">
     <div class="loader">
@@ -49,80 +50,67 @@
       <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="./recognition.html">Recognition</a>
       <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="projects.html">Projects</a>
       <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="contact.html">Contact</a>
+      <a class="inline-flex items-center justify-center rounded-full border border-[#141d23]/10 bg-white px-4 py-2 text-body-md font-semibold text-[#141d23] shadow-sm transition hover:bg-[#f3f4f6]" href="images/projects/ChristFranciscoResume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
     </div>
-
-    <button class="md:hidden text-primary mobile-nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle menu">
-      <span class="material-symbols-outlined">menu</span>
-    </button>
-
   </nav>
   <!-- ===== END TOP NAV ===== -->
 
 
-  <main class="pt-[120px]">
+  <main class="pt-[30px] md:pt-[40px]">
 
     <!-- ===== HERO SECTION ===== -->
-    <section class="max-w-container-max mx-auto px-margin-desktop mb-section-gap overflow-hidden">
-      <div class="grid grid-cols-12 gap-gutter items-center">
-
-        <!-- Left: Text -->
-        <div class="col-span-12 md:col-span-8 lg:col-span-7">
-          <span class="inline-block font-label-md text-label-md text-secondary mb-stack-sm tracking-[0.2em] uppercase">
-            Graphic Designer &amp; UI/UX Design
-          </span>
-
-          <h1 class="font-display text-display mb-stack-md leading-none">
-            Crafting digital <span class="italic font-normal">precision</span> with human empathy.
-          </h1>
-
-          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-stack-lg">
-            I’m a passionate Graphic and Digital Designer dedicated to crafting clean, modern, and visually compelling designs. I create digital experiences that combine creativity, branding, and functionality to help ideas stand out and leave a lasting impression.
-          </p>
-
-          <div class="flex flex-wrap gap-stack-md">
-            <a href="projects.html" class="bg-secondary text-white font-bold px-8 py-4 rounded-lg hover:opacity-90 transition-all flex items-center gap-2">
-              View Case Studies
-              <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
-            <a href="images/projects/ChristFranciscoResume.pdf" download target="_blank" rel="noopener noreferrer" class="border-2 border-primary text-primary font-bold px-8 py-4 rounded-lg hover:bg-primary hover:text-on-primary transition-all">
-              Resume
-            </a>
+    <section class="relative min-h-[80vh] md:min-h-[84vh] flex flex-col items-center justify-start pt-[40px] md:pt-1 overflow-hidden bg-[#f9f9f9]">
+      <canvas id="hero-shape-grid" class="shapegrid-canvas absolute inset-0 z-0"></canvas>
+      <div class="container mx-auto px-[20px] md:px-[80px] relative z-20 flex flex-col items-center">
+        <div class="relative w-full max-w-6xl flex flex-col items-center text-center">
+          <!-- Background Text Wrapper -->
+          <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none select-none z-0 translate-y-[1.5rem] md:translate-y-[2.5rem]">
+            <h2 class="font-display-xl text-[48px] md:text-[100px] lg:text-[140px] leading-none text-[#565858]/20 uppercase text-center mb-[-0.2em]">
+              I AM PROFESSIONAL
+            </h2>
+            <h1 class="font-display-xl text-[64px] md:text-[120px] lg:text-[180px] leading-none text-[#e02a2f]/90 uppercase text-center drop-shadow-[0_10px_24px_rgba(224,42,47,0.18)]">
+              <span id="hero-rotating-title" class="hero-rotating-title">GRAPHIC DESIGN</span><span class="hero-cursor">|</span>
+            </h1>
+          </div>
+          <!-- Character Image -->
+          <div class="relative z-30 w-[60%] sm:w-[48%] md:w-[44%] max-w-none mt-[-0.5rem] sm:mt-[-1rem] md:mt-[-1.5rem] min-h-[32vh] sm:min-h-[30vh] md:min-h-[34vh] translate-y-[4rem] sm:translate-y-[5rem] md:translate-y-[6rem] overflow-hidden">
+            <img alt="3D Graphic Designer Character" class="w-full h-full object-cover mx-auto" src="images/projects/animated copy.png" />
           </div>
         </div>
+      </div>
 
-        <!-- Right: Photo -->
-        <div class="col-span-12 md:col-span-4 lg:col-span-5 relative mt-12 md:mt-0">
-          <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl relative">
-            <div class="card-swap-container" aria-label="Animated stack of profile cards">
-                <div class="card-swap-item">
-                <img src="images/projects/tians.png" alt="Professional portrait of Christian Francisco" />
-              </div>
-              <div class="card-swap-item">
-                <img src="images/projects/Francisco, Christian.png" alt="Professional portrait of Christian Francisco" />
-              </div>
-              <div class="card-swap-item">
-                <img src="images/projects/Christ.png" alt="Professional portrait of Christian Francisco" />
-              </div>
-              <div class="card-swap-item">
-                <img src="images/projects/Yarn.png" alt="Professional portrait of Christian Francisco" />
-              </div>
-            </div>
+      <!-- Ticker Ribbon -->
+      <div class="absolute bottom-4 sm:bottom-6 md:bottom-10 left-[-10%] w-[120%] rotate-[-4deg] bg-[#e02a2f]/90 py-4 overflow-hidden z-20 border-y-2 border-[#af101a]/50 shadow-[0_20px_60px_rgba(224,42,47,0.15)]">
+        <div class="ticker-animation">
+          <div class="flex items-center gap-12 px-6">
+            <span class="font-headline-lg text-[24px] md:text-[32px] text-white uppercase flex items-center gap-4">
+              Graphic Design <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">star</span>
+            </span>
+            <span class="font-headline-lg text-[24px] md:text-[32px] text-white uppercase flex items-center gap-4">
+              UI/UX Design <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">star</span>
+            </span>
+            <span class="font-headline-lg text-[24px] md:text-[32px] text-white uppercase flex items-center gap-4">
+              Tech Support <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">star</span>
+            </span>
+            <span class="font-headline-lg text-[24px] md:text-[32px] text-white uppercase flex items-center gap-4">
+              Video Editing <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">star</span>
+            </span>
           </div>
-
-          <!-- Badge -->
-          <div class="absolute -bottom-6 -left-6 bg-surface p-6 rounded-lg border border-outline-variant/30 shadow-sm z-20">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center">
-                <span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">verified</span>
-              </div>
-              <div>
-                <p class="font-label-md text-label-md text-primary">Christian Francisco</p>
-                <p class="font-body-md text-body-md text-on-surface-variant italic">Bachelor Of Science Information Technology</p>
-              </div>
-            </div>
+          <div class="flex items-center gap-12 px-6">
+            <span class="font-headline-lg text-[24px] md:text-[32px] text-white uppercase flex items-center gap-4">
+              GRAPHIC DESIGNER <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">star</span>
+            </span>
+            <span class="font-headline-lg text-[24px] md:text-[32px] text-white uppercase flex items-center gap-4">
+              UI/UX DESIGNER <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">star</span>
+            </span>
+            <span class="font-headline-lg text-[24px] md:text-[32px] text-white uppercase flex items-center gap-4">
+              TECH SUPPORT <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">star</span>
+            </span>
+            <span class="font-headline-lg text-[24px] md:text-[32px] text-white uppercase flex items-center gap-4">
+              VIDEO EDITOR <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">star</span>
+            </span>
           </div>
         </div>
-
       </div>
     </section>
     <!-- ===== END HERO SECTION ===== -->
