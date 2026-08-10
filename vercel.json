@@ -1,0 +1,8 @@
+{
+  "buildCommand": "cd react-portfolio && npm install && npm run build",
+  "outputDirectory": "react-portfolio/dist",
+  "installCommand": "echo skip",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
