@@ -4,13 +4,13 @@ export default function ProjectDetailLayout({ meta, moreProjects, children }) {
   const { role, timeline, technologies, liveUrl, category, title, heroImg } = meta
 
   return (
-    <main className="pt-[120px]">
+    <main className="pt-[100px] md:pt-[120px]">
 
       {/* Hero */}
-      <header className="relative w-full h-[500px] md:h-[700px] overflow-hidden bg-surface-container-high">
+      <header className="relative w-full min-h-[420px] h-[420px] md:h-[700px] overflow-hidden bg-surface-container-high project-detail-hero">
         <div className="absolute inset-0 z-10 bg-gradient-to-t from-background via-transparent to-transparent" />
         <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url('${heroImg}')` }} />
-        <div className="absolute bottom-0 left-0 w-full px-margin-mobile md:px-margin-desktop pb-stack-lg z-20">
+        <div className="absolute bottom-0 left-0 w-full px-margin-mobile md:px-margin-desktop pb-stack-lg z-20 hero-title-wrap">
           <div className="max-w-container-max mx-auto flex flex-col gap-stack-sm">
             <span className="font-label-md text-label-md text-secondary tracking-widest uppercase">{category}</span>
             <h1 className="font-display-mobile md:font-display text-display-mobile md:text-display text-primary max-w-4xl">{title}</h1>
@@ -66,12 +66,15 @@ export default function ProjectDetailLayout({ meta, moreProjects, children }) {
 
       {/* More Projects */}
       <section className="px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto border-t border-outline-variant/20">
-        <div className="flex justify-between items-end mb-stack-lg">
+        <div className="flex flex-col gap-4 md:flex-row md:justify-between md:items-end mb-stack-lg">
           <div className="flex flex-col gap-2">
             <span className="font-label-md text-label-md text-on-surface-variant">Next Step</span>
             <h2 className="font-headline-lg text-headline-lg text-primary">Explore More Projects</h2>
           </div>
           <Link className="hidden md:flex items-center gap-2 font-label-md text-label-md text-secondary group" to="/projects">
+            View All <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </Link>
+          <Link className="flex md:hidden items-center justify-center gap-2 font-label-md text-label-md text-secondary group" to="/projects">
             View All <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
           </Link>
         </div>
@@ -103,8 +106,8 @@ export default function ProjectDetailLayout({ meta, moreProjects, children }) {
             I&apos;m currently available for freelance projects and full-time creative opportunities.
             Let&apos;s build something exceptional.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 mt-4">
-            <Link to="/contact" className="inline-block px-10 py-5 bg-secondary text-white font-label-md text-label-md rounded active:scale-95 transition-transform hover:brightness-110">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mt-4 project-detail-cta-group">
+            <Link to="/contact" className="inline-block w-full sm:w-auto px-10 py-5 bg-secondary text-white font-label-md text-label-md rounded active:scale-95 transition-transform hover:brightness-110">
               Get In Touch
             </Link>
             <a
@@ -112,7 +115,7 @@ export default function ProjectDetailLayout({ meta, moreProjects, children }) {
               download
               target="_blank"
               rel="noopener noreferrer"
-              className="px-10 py-5 border border-on-primary text-on-primary font-label-md text-label-md rounded active:scale-95 transition-transform hover:bg-on-primary hover:text-primary"
+              className="inline-block w-full sm:w-auto px-10 py-5 border border-on-primary text-on-primary font-label-md text-label-md rounded active:scale-95 transition-transform hover:bg-on-primary hover:text-primary"
             >
               Download Resume
             </a>

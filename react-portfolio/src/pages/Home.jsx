@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import useRevealOnScroll from '../hooks/useRevealOnScroll'
 
@@ -39,19 +39,15 @@ function useTypingEffect(elementRef) {
   }, [elementRef])
 }
 
-/* ── Canvas grid — fixed 1440×520 artboard, never resizes ── */
+/* ── Canvas grid — responsive hero background grid ── */
 function useCanvasGrid(canvasRef) {
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas || !canvas.getContext) return
     const ctx = canvas.getContext('2d')
 
-    // Fixed artboard dimensions — never change
-    const W = 1440
-    const H = 520
-    canvas.width = W
-    canvas.height = H
-
+    let W = 0
+    let H = 0
     const squareSize = 42
     const speed = 0.75
     const borderColor = '#bbb'
@@ -62,6 +58,18 @@ function useCanvasGrid(canvasRef) {
     const trailCells = []
     const cellOpacities = new Map()
     let rafId
+
+    const resizeCanvas = () => {
+      const rect = canvas.getBoundingClientRect()
+      const deviceRatio = window.devicePixelRatio || 1
+      W = rect.width
+      H = rect.height
+      canvas.width = Math.round(W * deviceRatio)
+      canvas.height = Math.round(H * deviceRatio)
+      canvas.style.width = `${W}px`
+      canvas.style.height = `${H}px`
+      ctx.setTransform(deviceRatio, 0, 0, deviceRatio, 0, 0)
+    }
 
     const drawGrid = () => {
       ctx.clearRect(0, 0, W, H)
@@ -111,7 +119,6 @@ function useCanvasGrid(canvasRef) {
 
     const handleMouseMove = (e) => {
       const rect = canvas.getBoundingClientRect()
-      // Map screen coords back to canvas coords (canvas is CSS 1440px wide)
       const scaleX = W / rect.width
       const scaleY = H / rect.height
       const offsetX = ((gridOffset.x % squareSize) + squareSize) % squareSize
@@ -136,12 +143,15 @@ function useCanvasGrid(canvasRef) {
       rafId = requestAnimationFrame(animate)
     }
 
+    resizeCanvas()
+    window.addEventListener('resize', resizeCanvas)
     canvas.addEventListener('mousemove', handleMouseMove)
     canvas.addEventListener('mouseleave', handleMouseLeave)
     rafId = requestAnimationFrame(animate)
 
     return () => {
       cancelAnimationFrame(rafId)
+      window.removeEventListener('resize', resizeCanvas)
       canvas.removeEventListener('mousemove', handleMouseMove)
       canvas.removeEventListener('mouseleave', handleMouseLeave)
     }
@@ -151,32 +161,43 @@ function useCanvasGrid(canvasRef) {
 export default function Home() {
   const rotatingTitleRef = useRef(null)
   const canvasRef = useRef(null)
+  const [navHeight, setNavHeight] = useState(64)
 
   useTypingEffect(rotatingTitleRef)
   useCanvasGrid(canvasRef)
   useRevealOnScroll('.reveal-home')
 
-  return (
-    <main style={{ paddingTop: '64px' }}>
+  useEffect(() => {
+    const updateNavHeight = () => {
+      const nav = document.querySelector('nav')
+      const height = nav?.getBoundingClientRect().height || 64
+      setNavHeight(height)
+    }
+    updateNavHeight()
+    window.addEventListener('resize', updateNavHeight)
+    return () => window.removeEventListener('resize', updateNavHeight)
+  }, [])
 
-      {/* ===== HERO SECTION — fixed 1440×520 artboard, never scales ===== */}
+  return (
+    <main style={{ paddingTop: `${navHeight}px` }}>
+
+      {/* ===== HERO SECTION ===== */}
       {/*
-        Outer wrapper: full viewport width, clips anything outside the artboard.
-        Height is locked to 520px — the artboard height.
+        Outer wrapper: full viewport width, fills the visible area below the navbar.
+        The hero artboard remains centered, preserving the existing composition.
       */}
-      <div style={{ width: '100%', height: '520px', overflow: 'hidden', position: 'relative', backgroundColor: '#f9f9f9' }}>
+<div className="home-hero-outer" style={{ width: '100vw', height: `calc(100vh - ${navHeight}px)`, overflow: 'hidden', position: 'relative', backgroundColor: '#f9f9f9' }}>
 
         {/*
-          Inner artboard: always 1440px wide, 520px tall.
-          Centered horizontally. If viewport < 1440px, it overflows and gets clipped.
+          Inner artboard: full hero background spans the visible hero area.
         */}
-        <div style={{
+        <div className="home-hero-artboard" style={{
           position: 'absolute',
           top: 0,
           left: '50%',
           transform: 'translateX(-50%)',
-          width: '1440px',
-          height: '520px',
+          width: '100vw',
+          height: '100%',
           overflow: 'hidden',
         }}>
 
@@ -187,8 +208,8 @@ export default function Home() {
             style={{
               position: 'absolute',
               inset: 0,
-              width: '1440px',
-              height: '520px',
+              width: '100%',
+              height: '100%',
               zIndex: 0,
             }}
           />
@@ -207,7 +228,7 @@ export default function Home() {
             <div
               style={{
                 fontFamily: 'Anton, sans-serif',
-                fontSize: '140px',
+                fontSize: 'clamp(96px, 6vw, 140px)',
                 lineHeight: 1,
                 color: 'rgba(86,88,88,0.18)',
                 textTransform: 'uppercase',
@@ -233,7 +254,7 @@ export default function Home() {
             <div
               style={{
                 fontFamily: 'Anton, sans-serif',
-                fontSize: '180px',
+                fontSize: 'clamp(120px, 10vw, 180px)',
                 lineHeight: 1,
                 color: 'rgba(224,42,47,0.92)',
                 textTransform: 'uppercase',
@@ -247,12 +268,9 @@ export default function Home() {
           </div>
 
           {/* Character image — larger, lower, behind the red banner */}
-          <div style={{
-            position: 'absolute',
-            top: '80px',
+          <div className="home-hero-character" style={{
             left: '50%',
-            transform: 'translateX(-50%)',
-            width: '680px',
+            width: 'clamp(560px, 56vw, 980px)',
             zIndex: 3,
             pointerEvents: 'none',
           }}>
@@ -260,7 +278,7 @@ export default function Home() {
               alt="Character"
               src="/images/projects/12121.png"
               style={{
-                width: '680px',
+                width: '100%',
                 height: 'auto',
                 objectFit: 'contain',
                 display: 'block',
@@ -271,9 +289,9 @@ export default function Home() {
           {/* Ticker ribbon — diagonal red banner */}
           <div style={{
             position: 'absolute',
-            bottom: '52px',
-            left: '-120px',
-            right: '-120px',
+            bottom: 'clamp(38px, 6vh, 52px)',
+            left: 'clamp(-140px, -10vw, -120px)',
+            right: 'clamp(-140px, -10vw, -120px)',
             transform: 'rotate(-4deg)',
             backgroundColor: 'rgba(224,42,47,0.92)',
             borderTop: '2px solid rgba(175,16,26,0.5)',
@@ -287,18 +305,18 @@ export default function Home() {
               {/* First set */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '48px', paddingLeft: '24px', paddingRight: '24px', flexShrink: 0 }}>
                 {['Graphic Design', 'UI/UX Design', 'Tech Support', 'Video Editing', 'Graphic Designer', 'UI/UX Designer', 'Tech Support', 'Video Editor'].map((item) => (
-                  <span key={item} style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: '28px', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'flex', alignItems: 'center', gap: '16px' }}>
+                  <span key={item} style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 'clamp(18px, 1.25vw, 28px)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'flex', alignItems: 'center', gap: '16px' }}>
                     {item}
                     <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1", fontSize: '20px', color: '#fff' }}>star</span>
                   </span>
                 ))}
               </div>
               {/* Duplicate for seamless loop */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '48px', paddingLeft: '24px', paddingRight: '24px', flexShrink: 0 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(24px, 3vw, 48px)', paddingLeft: '24px', paddingRight: '24px', flexShrink: 0 }}>
                 {['Graphic Design', 'UI/UX Design', 'Tech Support', 'Video Editing', 'Graphic Designer', 'UI/UX Designer', 'Tech Support', 'Video Editor'].map((item) => (
-                  <span key={`dup-${item}`} style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: '28px', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'flex', alignItems: 'center', gap: '16px' }}>
+                  <span key={`dup-${item}`} style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: 'clamp(18px, 1.25vw, 28px)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'flex', alignItems: 'center', gap: '16px' }}>
                     {item}
-                    <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1", fontSize: '20px', color: '#fff' }}>star</span>
+                    <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1", fontSize: 'clamp(16px, 1vw, 20px)', color: '#fff' }}>star</span>
                   </span>
                 ))}
               </div>
