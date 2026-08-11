@@ -33,21 +33,190 @@ export default function Contact() {
 
           {/* Email */}
           <div>
-            <h3 className="font-label-md text-label-md uppercase tracking-widest text-outline mb-stack-sm">Connect</h3>
-            <a className="group flex items-center gap-4 text-headline-md font-headline-md hover:text-secondary transition-colors break-all" href="mailto:christianfrancisco.bsit@gmail.com">
-              christianfrancisco.bsit@gmail.com
+            <h3 className="font-label-md text-label-md uppercase tracking-widest text-outline mb-4">Connect</h3>
+
+            <a
+              href="mailto:christianfrancisco.bsit@gmail.com"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '16px',
+                padding: '18px 20px',
+                borderRadius: '16px',
+                background: 'linear-gradient(135deg, #141d23 0%, #2a3540 100%)',
+                border: '1px solid rgba(255,255,255,0.07)',
+                boxShadow: '0 4px 24px rgba(20,29,35,0.12)',
+                textDecoration: 'none',
+                transition: 'transform 0.25s ease, box-shadow 0.25s ease',
+                position: 'relative',
+                overflow: 'hidden',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'translateY(-3px)'
+                e.currentTarget.style.boxShadow = '0 12px 32px rgba(0,109,53,0.25)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'translateY(0)'
+                e.currentTarget.style.boxShadow = '0 4px 24px rgba(20,29,35,0.12)'
+              }}
+            >
+              {/* Subtle green glow behind icon */}
+              <div style={{
+                position: 'absolute', top: '-10px', left: '-10px',
+                width: '80px', height: '80px',
+                background: 'radial-gradient(circle, rgba(0,109,53,0.35) 0%, transparent 70%)',
+                pointerEvents: 'none',
+              }} />
+
+              {/* Mail icon circle */}
+              <div style={{
+                width: '44px', height: '44px', borderRadius: '12px',
+                backgroundColor: 'rgba(0,109,53,0.2)',
+                border: '1px solid rgba(0,109,53,0.35)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                flexShrink: 0, position: 'relative', zIndex: 1,
+              }}>
+                <span className="material-symbols-outlined" style={{
+                  fontSize: '22px', color: '#00e476',
+                  fontVariationSettings: "'FILL' 1",
+                }}>mail</span>
+              </div>
+
+              {/* Text */}
+              <div style={{ position: 'relative', zIndex: 1, minWidth: 0 }}>
+                <p style={{
+                  fontFamily: 'Plus Jakarta Sans, sans-serif',
+                  fontSize: '11px', fontWeight: 700,
+                  color: 'rgba(255,255,255,0.45)',
+                  letterSpacing: '0.12em', textTransform: 'uppercase',
+                  margin: '0 0 3px',
+                }}>Email me</p>
+                <p style={{
+                  fontFamily: 'Plus Jakarta Sans, sans-serif',
+                  fontSize: '14px', fontWeight: 600,
+                  color: '#ffffff',
+                  margin: 0,
+                  wordBreak: 'break-all',
+                }}>christianfrancisco.bsit@gmail.com</p>
+              </div>
+
+              {/* Arrow */}
+              <div style={{ marginLeft: 'auto', flexShrink: 0, position: 'relative', zIndex: 1 }}>
+                <span className="material-symbols-outlined" style={{
+                  fontSize: '18px', color: 'rgba(255,255,255,0.3)',
+                }}>arrow_outward</span>
+              </div>
             </a>
           </div>
 
           {/* Availability */}
           <div className="pt-stack-md border-t border-outline-variant/20">
-            <h3 className="font-label-md text-label-md uppercase tracking-widest text-outline mb-stack-sm">Availability</h3>
-            <div className="flex items-center gap-3">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
-              </span>
-              <p className="font-body-md font-bold">IT Support, Admin Staff, Back Office, UI/UX Design, Graphic Design</p>
+            <h3 className="font-label-md text-label-md uppercase tracking-widest text-outline mb-4">Availability</h3>
+
+            {/* Status card */}
+            <div style={{
+              background: 'linear-gradient(135deg, rgba(0,109,53,0.06) 0%, rgba(0,109,53,0.02) 100%)',
+              border: '1px solid rgba(0,109,53,0.18)',
+              borderRadius: '16px',
+              padding: '20px',
+              position: 'relative',
+              overflow: 'hidden',
+            }}>
+
+              {/* Subtle background glow */}
+              <div style={{
+                position: 'absolute', top: '-20px', right: '-20px',
+                width: '120px', height: '120px',
+                background: 'radial-gradient(circle, rgba(0,109,53,0.12) 0%, transparent 70%)',
+                pointerEvents: 'none',
+              }} />
+
+              {/* Open to work badge */}
+              <div style={{
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+                backgroundColor: 'rgba(0,109,53,0.1)',
+                border: '1px solid rgba(0,109,53,0.25)',
+                borderRadius: '999px',
+                padding: '4px 12px',
+                marginBottom: '14px',
+              }}>
+                <span style={{
+                  position: 'relative', display: 'inline-flex',
+                  width: '8px', height: '8px',
+                }}>
+                  <span className="animate-ping" style={{
+                    position: 'absolute', inset: 0,
+                    borderRadius: '50%',
+                    backgroundColor: '#006d35',
+                    opacity: 0.6,
+                  }} />
+                  <span style={{
+                    position: 'relative', display: 'inline-block',
+                    width: '8px', height: '8px',
+                    borderRadius: '50%',
+                    backgroundColor: '#006d35',
+                  }} />
+                </span>
+                <span style={{
+                  fontFamily: 'Plus Jakarta Sans, sans-serif',
+                  fontSize: '11px', fontWeight: 700,
+                  color: '#006d35', letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                }}>
+                  Open to Work
+                </span>
+              </div>
+
+              {/* Role chips */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {[
+                  { label: 'IT Support', icon: 'support_agent' },
+                  { label: 'Admin Staff', icon: 'admin_panel_settings' },
+                  { label: 'Back Office', icon: 'work' },
+                  { label: 'UI/UX Design', icon: 'design_services' },
+                  { label: 'Graphic Design', icon: 'palette' },
+                ].map(({ label, icon }) => (
+                  <div key={label} style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '6px',
+                    backgroundColor: '#fff',
+                    border: '1px solid rgba(0,109,53,0.15)',
+                    borderRadius: '10px',
+                    padding: '6px 12px',
+                    boxShadow: '0 1px 4px rgba(0,0,0,0.05)',
+                    transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                    cursor: 'default',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.transform = 'translateY(-2px)'
+                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,109,53,0.15)'
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.transform = 'translateY(0)'
+                    e.currentTarget.style.boxShadow = '0 1px 4px rgba(0,0,0,0.05)'
+                  }}
+                  >
+                    <span className="material-symbols-outlined" style={{
+                      fontSize: '14px', color: '#006d35',
+                      fontVariationSettings: "'FILL' 1",
+                    }}>{icon}</span>
+                    <span style={{
+                      fontFamily: 'Plus Jakarta Sans, sans-serif',
+                      fontSize: '12px', fontWeight: 600,
+                      color: '#141d23',
+                    }}>{label}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom note */}
+              <p style={{
+                fontFamily: 'Source Serif 4, serif',
+                fontSize: '13px', color: '#75777a',
+                marginTop: '14px', marginBottom: 0,
+              }}>
+                Available for freelance &amp; full-time roles
+              </p>
             </div>
           </div>
 
@@ -92,7 +261,93 @@ export default function Contact() {
 
             </div>
           </div>
+
         </div>
+
+        {/* ── Portrait Card — right column ── */}
+        <div className="md:col-span-8 flex items-center justify-center reveal-on-scroll">
+          <div
+            style={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: '400px',
+              borderRadius: '28px',
+              overflow: 'hidden',
+              boxShadow: '0 40px 100px rgba(0,0,0,0.28), 0 0 0 1px rgba(212,175,55,0.18)',
+              background: '#0a0a0a',
+            }}
+            className="group"
+          >
+            {/* Rotating gold conic border */}
+            <div style={{
+              position: 'absolute', inset: '-2px', borderRadius: '30px',
+              background: 'conic-gradient(from 0deg, rgba(212,175,55,0.9), rgba(255,255,200,0.2), transparent 35%, rgba(212,175,55,0.7), transparent 65%, rgba(255,255,200,0.15), rgba(212,175,55,0.9))',
+              animation: 'rotateBorder 5s linear infinite',
+              zIndex: 0,
+            }} />
+            {/* Inner frame */}
+            <div style={{ position: 'absolute', inset: '2px', borderRadius: '26px', background: '#0a0a0a', zIndex: 1 }} />
+            {/* Ambient glow top */}
+            <div style={{
+              position: 'absolute', top: 0, left: 0, right: 0, height: '50%',
+              background: 'radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.12) 0%, transparent 70%)',
+              zIndex: 2, pointerEvents: 'none',
+            }} />
+            {/* Corner brackets */}
+            {[
+              { top: '16px', left: '16px', borderTop: '2px solid rgba(212,175,55,0.9)', borderLeft: '2px solid rgba(212,175,55,0.9)', borderRadius: '6px 0 0 0' },
+              { top: '16px', right: '16px', borderTop: '2px solid rgba(212,175,55,0.9)', borderRight: '2px solid rgba(212,175,55,0.9)', borderRadius: '0 6px 0 0' },
+              { bottom: '16px', left: '16px', borderBottom: '2px solid rgba(212,175,55,0.9)', borderLeft: '2px solid rgba(212,175,55,0.9)', borderRadius: '0 0 0 6px' },
+              { bottom: '16px', right: '16px', borderBottom: '2px solid rgba(212,175,55,0.9)', borderRight: '2px solid rgba(212,175,55,0.9)', borderRadius: '0 0 6px 0' },
+            ].map((s, i) => (
+              <div key={i} style={{ position: 'absolute', width: '26px', height: '26px', zIndex: 5, pointerEvents: 'none', ...s }} />
+            ))}
+            {/* Portrait image */}
+            <img
+              src="/images/projects/Christ.png"
+              alt="Christian Francisco — Graduation Portrait"
+              style={{
+                position: 'relative', zIndex: 3,
+                display: 'block', width: '100%', height: 'auto',
+                aspectRatio: '3/4', objectFit: 'cover', objectPosition: 'center top',
+                borderRadius: '26px',
+                transition: 'transform 0.8s cubic-bezier(0.16,1,0.3,1)',
+              }}
+              className="group-hover:scale-105"
+            />
+            {/* Bottom caption */}
+            <div style={{
+              position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 6,
+              padding: '48px 24px 24px',
+              background: 'linear-gradient(to top, rgba(0,0,0,0.88) 0%, transparent 100%)',
+              borderRadius: '0 0 26px 26px',
+            }}>
+              <div style={{
+                display: 'inline-flex', alignItems: 'center', gap: '6px',
+                backgroundColor: 'rgba(212,175,55,0.18)', border: '1px solid rgba(212,175,55,0.55)',
+                borderRadius: '999px', padding: '4px 12px', marginBottom: '10px',
+              }}>
+                <span className="material-symbols-outlined" style={{ fontSize: '13px', color: '#d4af37', fontVariationSettings: "'FILL' 1" }}>military_tech</span>
+                <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: '10px', fontWeight: 700, color: '#d4af37', letterSpacing: '0.14em', textTransform: 'uppercase' }}>Class of 2026</span>
+              </div>
+              <h3 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: '20px', fontWeight: 800, color: '#fff', margin: '0 0 4px', letterSpacing: '-0.01em' }}>
+                Francisco, Christian M.
+              </h3>
+              <p style={{ fontFamily: 'Source Serif 4, serif', fontSize: '13px', color: 'rgba(255,255,255,0.55)', margin: '0 0 12px' }}>
+                BS Information Technology · GRC
+              </p>
+              <div style={{ display: 'flex', gap: '16px' }}>
+                {[{ icon: 'workspace_premium', label: 'Capstone Awardee' }, { icon: 'palette', label: 'UI/UX Designer' }].map(({ icon, label }) => (
+                  <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                    <span className="material-symbols-outlined" style={{ fontSize: '13px', color: '#d4af37', fontVariationSettings: "'FILL' 1" }}>{icon}</span>
+                    <span style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: '11px', color: 'rgba(255,255,255,0.5)', fontWeight: 600 }}>{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
       </section>
     </main>
   )

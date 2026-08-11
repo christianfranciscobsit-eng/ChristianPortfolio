@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import PageLoader from './components/PageLoader'
@@ -12,13 +13,9 @@ import ProjectDetailAbbe from './pages/ProjectDetailAbbe'
 import ProjectDetailAbr from './pages/ProjectDetailAbr'
 import ProjectDetailPortfolio from './pages/ProjectDetailPortfolio'
 
-export default function App() {
+function AppInner() {
   const location = useLocation()
-
-  // Scroll to top on route change
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [location.pathname])
+  useEffect(() => { window.scrollTo(0, 0) }, [location.pathname])
 
   return (
     <>
@@ -36,5 +33,13 @@ export default function App() {
       </Routes>
       <Footer />
     </>
+  )
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <AppInner />
+    </ThemeProvider>
   )
 }

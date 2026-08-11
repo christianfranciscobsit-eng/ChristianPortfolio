@@ -246,13 +246,13 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Character image — fixed position, only Y adjusted, never scaled */}
+          {/* Character image — larger, lower, behind the red banner */}
           <div style={{
             position: 'absolute',
-            top: '60px',
+            top: '80px',
             left: '50%',
             transform: 'translateX(-50%)',
-            width: '480px',
+            width: '680px',
             zIndex: 3,
             pointerEvents: 'none',
           }}>
@@ -260,7 +260,7 @@ export default function Home() {
               alt="Character"
               src="/images/projects/12121.png"
               style={{
-                width: '480px',
+                width: '680px',
                 height: 'auto',
                 objectFit: 'contain',
                 display: 'block',
@@ -376,7 +376,7 @@ export default function Home() {
             <img className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="/images/projects/VJ.png" alt="Gallery 4" />
           </div>
           <div className="md:col-span-2 relative group overflow-hidden rounded-lg">
-            <img className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="/images/projects/1.jpeg" alt="Gallery 5" />
+            <img className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="/images/projects/1.png" alt="Gallery 5" />
           </div>
           <div className="relative group overflow-hidden rounded-lg">
             <img className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="/images/projects/Yarn.png" alt="Gallery 6" />
@@ -394,14 +394,20 @@ export default function Home() {
       <section className="max-w-container-max mx-auto px-margin-desktop mb-section-gap">
         <div className="bg-primary text-on-primary rounded-xl p-stack-lg md:p-24 relative overflow-hidden">
           <div className="relative z-10 max-w-2xl">
-            <h2 className="font-display text-display-mobile md:text-display mb-stack-md leading-tight">
+            <h2
+              className="mb-stack-md leading-tight font-display font-extrabold"
+              style={{ fontSize: 'clamp(28px, 5vw, 72px)' }}
+            >
               Ready to elevate your digital presence?
             </h2>
-            <p className="font-body-lg text-body-lg text-surface-variant mb-stack-lg">
+            <p className="font-body-lg text-surface-variant mb-stack-lg"
+              style={{ fontSize: 'clamp(15px, 2vw, 20px)' }}
+            >
               Currently accepting high-impact projects for Q3 and Q4 2024. Let's discuss your vision.
             </p>
             <Link
-              className="inline-flex items-center gap-4 bg-secondary-container text-on-secondary-container px-10 py-5 rounded-lg font-bold text-headline-md hover:scale-105 transition-transform"
+              className="inline-flex items-center gap-3 bg-secondary-container text-on-secondary-container rounded-lg font-bold hover:scale-105 transition-transform"
+              style={{ padding: 'clamp(12px, 2vw, 20px) clamp(20px, 3vw, 40px)', fontSize: 'clamp(14px, 1.5vw, 24px)' }}
               to="/contact"
             >
               Get in touch
