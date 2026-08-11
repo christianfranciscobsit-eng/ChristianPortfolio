@@ -217,7 +217,7 @@ export default function Home() {
           {/* BG subtitle — "I AM PROFESSIONAL" */}
           <div style={{
             position: 'absolute',
-            top: '80px',
+            top: '150px',
             left: 0,
             right: 0,
             textAlign: 'center',
@@ -243,7 +243,7 @@ export default function Home() {
           {/* BG title — rotating typed word */}
           <div style={{
             position: 'absolute',
-            top: '195px',
+            top: '240px',
             left: 0,
             right: 0,
             textAlign: 'center',
@@ -289,7 +289,7 @@ export default function Home() {
           {/* Ticker ribbon — diagonal red banner */}
           <div style={{
             position: 'absolute',
-            bottom: 'clamp(38px, 6vh, 52px)',
+            bottom: 'clamp(56px, 7vh, 76px)',
             left: 'clamp(-140px, -10vw, -120px)',
             right: 'clamp(-140px, -10vw, -120px)',
             transform: 'rotate(-4deg)',
