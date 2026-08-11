@@ -643,16 +643,54 @@ textarea:focus {
 }
 
 @media (max-width: 1024px) {
+    .home-hero-artboard {
+        position: absolute !important;
+        width: 100vw !important;
+        height: 100% !important;
+        top: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
     .home-hero-character {
-        top: clamp(150px, 20vh, 190px) !important;
-        transform: translateX(-50%) translateY(4vh) !important;
+        position: absolute !important;
+        left: 50% !important;
+        width: 86vw !important;
+        max-width: 720px !important;
+        top: auto !important;
+        bottom: 18vh !important;
+        transform: translateX(-50%) !important;
+        z-index: 3 !important;
+    }
+
+    .home-hero-iam {
+        top: 19vh !important;
+    }
+
+    .home-hero-iam > div {
+        font-size: clamp(72px, 7vw, 110px) !important;
+    }
+
+    .home-hero-bg-title {
+        top: 27vh !important;
+    }
+
+    .home-hero-bg-title .hero-rotating-title {
+        font-size: clamp(68px, 8vw, 98px) !important;
+    }
+
+    .home-hero-bg-title .hero-cursor {
+        font-size: clamp(60px, 6vw, 92px) !important;
+    }
+
+    .home-hero-banner {
+        bottom: 8vh !important;
     }
 }
 
 @media (max-width: 768px) {
     .home-hero-character {
-        top: clamp(160px, 22vh, 200px) !important;
-        transform: translateX(-50%) translateY(6vh) !important;
+        display: none !important;
     }
     .hero-section {
         min-height: 62vh !important;
@@ -672,11 +710,27 @@ textarea:focus {
     .hero-section .relative.z-30 {
         translate: 0 0 !important;
     }
-    .home-hero-character {
-        top: clamp(130px, 20vh, 170px) !important;
-        transform: translateX(-50%) translateY(5vh) !important;
+    .home-hero-iam {
+        top: 18vh !important;
+    }
+    .home-hero-iam > div {
+        font-size: clamp(78px, 12vw, 118px) !important;
+    }
+    .home-hero-bg-title {
+        top: 26vh !important;
+    }
+    .home-hero-bg-title .hero-rotating-title {
+        font-size: clamp(72px, 14vw, 110px) !important;
+    }
+    .home-hero-bg-title .hero-cursor {
+        font-size: clamp(60px, 9vw, 96px) !important;
+    }
+    .home-hero-banner {
+        bottom: 16vh !important;
     }
 }
+
+/* Hero background wrapper: contain and responsively scale/hide big text */
 
 /* Hero background wrapper: contain and responsively scale/hide big text */
 .hero-bg-wrapper {

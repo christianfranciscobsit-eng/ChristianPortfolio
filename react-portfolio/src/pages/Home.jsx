@@ -215,9 +215,9 @@ export default function Home() {
           />
 
           {/* BG subtitle — "I AM PROFESSIONAL" */}
-          <div style={{
+          <div className="home-hero-iam" style={{
             position: 'absolute',
-            top: '150px',
+            top: '180px',
             left: 0,
             right: 0,
             textAlign: 'center',
@@ -241,9 +241,9 @@ export default function Home() {
           </div>
 
           {/* BG title — rotating typed word */}
-          <div style={{
+          <div className="home-hero-bg-title" style={{
             position: 'absolute',
-            top: '240px',
+            top: '260px',
             left: 0,
             right: 0,
             textAlign: 'center',
@@ -287,9 +287,9 @@ export default function Home() {
           </div>
 
           {/* Ticker ribbon — diagonal red banner */}
-          <div style={{
+          <div className="home-hero-banner" style={{
             position: 'absolute',
-            bottom: 'clamp(56px, 7vh, 76px)',
+            bottom: 'clamp(72px, 8vh, 92px)',
             left: 'clamp(-140px, -10vw, -120px)',
             right: 'clamp(-140px, -10vw, -120px)',
             transform: 'rotate(-4deg)',
