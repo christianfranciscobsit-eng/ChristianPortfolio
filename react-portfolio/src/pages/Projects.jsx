@@ -109,7 +109,32 @@ export default function Projects() {
           </div>
         </article>
 
-        {/* Project 3: Full Width */}
+        {/* Project 3 */}
+        <article className="reveal-on-scroll group project-card">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+            <div className="md:col-span-8 overflow-hidden rounded-xl bg-surface-container">
+              <div
+                className="project-image w-full aspect-[16/9] transition-transform duration-700 bg-cover bg-center"
+                style={{ backgroundImage: "url('/images/projects/Davidteahouse.png')" }}
+              />
+            </div>
+            <div className="md:col-span-4 flex flex-col justify-center">
+              <div className="flex gap-stack-sm mb-4">
+                <span className="bg-surface-variant px-3 py-1 rounded text-[10px] font-label-md text-on-surface-variant uppercase tracking-wider">Restaurant</span>
+                <span className="bg-surface-variant px-3 py-1 rounded text-[10px] font-label-md text-on-surface-variant uppercase tracking-wider">Branding</span>
+              </div>
+              <h2 className="font-headline-lg text-headline-lg text-primary mb-stack-sm">David Tea House</h2>
+              <p className="font-body-md text-body-md text-on-surface-variant mb-6">
+                A warm, modern web experience built to showcase a tea house menu, signature drinks, and easy reservation access.
+              </p>
+              <Link className="inline-flex items-center gap-2 font-label-md text-label-md text-primary group-hover:text-secondary transition-colors" to="/project/david-tea-house">
+                VIEW CASE STUDY <span className="material-symbols-outlined text-sm">arrow_outward</span>
+              </Link>
+            </div>
+          </div>
+        </article>
+
+        {/* Project 4: Full Width */}
         <article className="reveal-on-scroll group project-card relative overflow-hidden rounded-xl h-[600px] flex items-end p-margin-mobile md:p-margin-desktop">
           <div
             className="absolute inset-0 z-0 bg-cover bg-center project-image transition-transform duration-1000"

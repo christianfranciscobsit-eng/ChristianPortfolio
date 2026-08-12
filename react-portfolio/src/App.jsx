@@ -11,6 +11,7 @@ import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 import ProjectDetailAbbe from './pages/ProjectDetailAbbe'
 import ProjectDetailAbr from './pages/ProjectDetailAbr'
+import ProjectDetailDavidTea from './pages/ProjectDetailDavidTea'
 import ProjectDetailPortfolio from './pages/ProjectDetailPortfolio'
 
 function AppInner() {
@@ -29,6 +30,7 @@ function AppInner() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/project/abbe" element={<ProjectDetailAbbe />} />
         <Route path="/project/abr" element={<ProjectDetailAbr />} />
+        <Route path="/project/david-tea-house" element={<ProjectDetailDavidTea />} />
         <Route path="/project/portfolio" element={<ProjectDetailPortfolio />} />
       </Routes>
       <Footer />

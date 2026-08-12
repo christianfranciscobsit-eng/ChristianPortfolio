@@ -76,7 +76,7 @@ export default function ProjectDetailPortfolio() {
 
             {/* Portrait image */}
             <img
-              src="/images/projects/Christ.png"
+              src="/images/projects/tians.png"
               alt="Christian Francisco — Graduation Portrait"
               style={{
                 position: 'relative', zIndex: 2,

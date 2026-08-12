@@ -43,16 +43,18 @@ export default function ProjectDetailLayout({ meta, moreProjects, children }) {
                   ))}
                 </div>
               </div>
-              <div className="mt-4">
-                <a
-                  className="flex items-center justify-center gap-2 w-full py-4 bg-primary text-on-primary font-label-md text-label-md rounded hover:bg-secondary transition-all active:scale-95"
-                  href={liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Live Preview <span className="material-symbols-outlined text-sm">open_in_new</span>
-                </a>
-              </div>
+              {liveUrl && (
+                <div className="mt-4">
+                  <a
+                    className="flex items-center justify-center gap-2 w-full py-4 bg-primary text-on-primary font-label-md text-label-md rounded hover:bg-secondary transition-all active:scale-95"
+                    href={liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Live Preview <span className="material-symbols-outlined text-sm">open_in_new</span>
+                  </a>
+                </div>
+              )}
             </div>
           </div>
 
