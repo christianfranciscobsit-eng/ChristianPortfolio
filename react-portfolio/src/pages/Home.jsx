@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import useRevealOnScroll from '../hooks/useRevealOnScroll'
+import DriftWall from '../components/DriftWall'
+import DepthCarousel from '../components/DepthCarousel'
 
 /* ── Typing effect ── */
 function useTypingEffect(elementRef) {
@@ -376,35 +378,43 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:auto-rows-[300px]">
-          <div className="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-lg">
-            <img className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="/images/projects/Jihyoh.jpg" alt="Pen Tool Portrait" />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-stack-md">
-              <span className="text-white font-label-md">01. VECTOR ART</span>
-              <h4 className="text-white font-headline-md">Pen Tool Portrait</h4>
-            </div>
-          </div>
-          <div className="relative group overflow-hidden rounded-lg">
-            <img className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="/images/projects/Gez.png" alt="Gallery 2" />
-          </div>
-          <div className="relative group overflow-hidden rounded-lg">
-            <img className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="/images/projects/Jhia.png" alt="Gallery 3" />
-          </div>
-          <div className="md:row-span-2 relative group overflow-hidden rounded-lg">
-            <img className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="/images/projects/VJ.png" alt="Gallery 4" />
-          </div>
-          <div className="md:col-span-2 relative group overflow-hidden rounded-lg">
-            <img className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="/images/projects/1.png" alt="Gallery 5" />
-          </div>
-          <div className="relative group overflow-hidden rounded-lg">
-            <img className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="/images/projects/Yarn.png" alt="Gallery 6" />
-          </div>
-          <div className="relative group overflow-hidden rounded-lg">
-            <img className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="/images/projects/Lisa.png" alt="Gallery 7" />
-          </div>
-          <div className="relative group overflow-hidden rounded-lg">
-            <img className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="/images/projects/AJ.png" alt="Gallery 8" />
-          </div>
+        <div style={{ height: 620 }}>
+          <DriftWall
+            items={[
+              { image: '/images/projects/Jihyoh.jpg', title: 'Pen Tool Portrait', href: '#', orientation: 'portrait' },
+              { image: '/images/projects/Gez.png', title: 'Visual Story', href: '#', orientation: 'landscape' },
+              { image: '/images/projects/Jhia.png', title: 'Motion Focus', href: '#', orientation: 'portrait' },
+              { image: '/images/projects/VJ.png', title: 'Frame Build', href: '#', orientation: 'portrait' },
+              { image: '/images/projects/1.png', title: 'Identity Test', href: '#', orientation: 'landscape' },
+              { image: '/images/projects/Yarn.png', title: 'Material Mood', href: '#', orientation: 'portrait' },
+              { image: '/images/projects/Lisa.png', title: 'Creative Draft', href: '#', orientation: 'portrait' },
+              { image: '/images/projects/AJ.png', title: 'Digital Finish', href: '#', orientation: 'landscape' },
+              { image: '/images/projects/Jihyoh.jpg', title: 'Pen Tool Portrait', href: '#', orientation: 'portrait' },
+              { image: '/images/projects/Gez.png', title: 'Visual Story', href: '#', orientation: 'landscape' },
+              { image: '/images/projects/Jhia.png', title: 'Motion Focus', href: '#', orientation: 'portrait' },
+              { image: '/images/projects/VJ.png', title: 'Frame Build', href: '#', orientation: 'portrait' },
+              { image: '/images/projects/1.png', title: 'Identity Test', href: '#', orientation: 'landscape' },
+              { image: '/images/projects/Yarn.png', title: 'Material Mood', href: '#', orientation: 'portrait' },
+              { image: '/images/projects/Lisa.png', title: 'Creative Draft', href: '#', orientation: 'portrait' },
+            ]}
+            columns={5}
+            tileWidth={220}
+            tileHeight={220}
+            gap={18}
+            tilt={18}
+            turn={-14}
+            perspective={1200}
+            depth={110}
+            speed={36}
+            direction="up"
+            variance={0.46}
+            parallax={0.7}
+            lift={70}
+            fade={0.65}
+            dim={0.6}
+            overlayColor="#ffffff"
+            radius={18}
+          />
         </div>
       </section>
 

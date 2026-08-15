@@ -166,14 +166,13 @@ export default function Recognition() {
       {/* Awards list */}
       <section className="space-y-0 mb-section-gap observe-section">
         {awards.map(({ year, title }) => (
-          <div key={title} className="group flex flex-col md:flex-row items-start md:items-center justify-between py-stack-md border-b border-outline-variant hover:bg-surface-container-low transition-colors px-4 -mx-4 cursor-default">
+          <div key={title} className="flex flex-col md:flex-row items-start md:items-center justify-between py-stack-md border-b border-outline-variant px-4 -mx-4">
             <div className="flex items-center gap-stack-md mb-stack-sm md:mb-0">
               <span className="font-label-md text-label-md text-on-surface-variant w-12">{year}</span>
-              <h4 className="font-headline-md text-headline-md group-hover:translate-x-2 transition-transform duration-300">{title}</h4>
+              <h4 className="font-headline-md text-headline-md">{title}</h4>
             </div>
             <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-gutter">
               <span className="font-body-md text-on-surface-variant">Awardee</span>
-              <span className="material-symbols-outlined text-secondary hidden md:block">north_east</span>
             </div>
           </div>
         ))}

@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import CreativeShowcase from '../components/CreativeShowcase'
+import DepthCarousel from '../components/DepthCarousel'
 
 /* ── Video source — change this path to update the video ── */
 const VIDEO_SRC = '/videos/showcase.mp4'
@@ -120,12 +121,13 @@ export default function Projects() {
             </div>
             <div className="md:col-span-4 flex flex-col justify-center">
               <div className="flex gap-stack-sm mb-4">
-                <span className="bg-surface-variant px-3 py-1 rounded text-[10px] font-label-md text-on-surface-variant uppercase tracking-wider">Restaurant</span>
                 <span className="bg-surface-variant px-3 py-1 rounded text-[10px] font-label-md text-on-surface-variant uppercase tracking-wider">Branding</span>
+                <span className="bg-surface-variant px-3 py-1 rounded text-[10px] font-label-md text-on-surface-variant uppercase tracking-wider">F&B Design</span>
               </div>
               <h2 className="font-headline-lg text-headline-lg text-primary mb-stack-sm">David Tea House</h2>
               <p className="font-body-md text-body-md text-on-surface-variant mb-6">
-                A warm, modern web experience built to showcase a tea house menu, signature drinks, and easy reservation access.
+                A premium tea house brand identity and design system, featuring elegant typography
+                and a refined visual language that communicates sophistication and tradition.
               </p>
               <Link className="inline-flex items-center gap-2 font-label-md text-label-md text-primary group-hover:text-secondary transition-colors" to="/project/david-tea-house">
                 VIEW CASE STUDY <span className="material-symbols-outlined text-sm">arrow_outward</span>
@@ -161,6 +163,45 @@ export default function Projects() {
 
       {/* ===== CREATIVE SHOWCASE ===== */}
       <CreativeShowcase videoSrc={VIDEO_SRC} />
+
+      <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+        <div className="mb-stack-lg">
+          <span className="font-label-md text-label-md text-secondary tracking-widest uppercase">Projects</span>
+          <h2 className="font-headline-lg text-headline-lg">Featured Projects</h2>
+        </div>
+
+        <div style={{ height: 520 }}>
+          <DepthCarousel
+            items={[
+              { image: '/images/projects/Jihyoh.jpg', alt: 'Jihyoh' },
+              { image: '/images/projects/Gez.png', alt: 'Gez' },
+              { image: '/images/projects/Jhia.png', alt: 'Jhia' },
+              { image: '/images/projects/VJ.png', alt: 'VJ' },
+              { image: '/images/projects/1.png', alt: '1' },
+              { image: '/images/projects/Yarn.png', alt: 'Yarn' },
+              { image: '/images/projects/Lisa.png', alt: 'Lisa' },
+              { image: '/images/projects/AJ.png', alt: 'AJ' },
+            ]}
+            cardWidth={260}
+            cardHeight={360}
+            radius={18}
+            depth={180}
+            spread={88}
+            tilt={22}
+            tiltDirection="right"
+            perspective={1400}
+            visibleCards={4}
+            falloff={0.2}
+            blur={6}
+            autoplay
+            loop
+            autoplayDelay={2800}
+            showControls
+            showIndicators
+            tint="#0c0d12"
+          />
+        </div>
+      </section>
 
     </main>
   )

@@ -86,12 +86,12 @@ export default function Expertise() {
         </div>
       </section>
 
-      <section className="mb-section-gap h-[600px] w-full relative group overflow-hidden observe-section">
+      <section className="mb-section-gap h-[320px] md:h-[600px] w-full relative group overflow-hidden observe-section">
         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-700 z-10"></div>
         <img className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="/images/projects/TitoBoy.png" alt="Expertise" />
-        <div className="absolute bottom-margin-desktop left-margin-desktop z-20 text-white">
-          <p className="font-label-md text-label-md mb-stack-sm uppercase tracking-tighter opacity-80">Process Focused</p>
-          <h2 className="font-headline-lg text-headline-lg max-w-xl italic">"Great design begins with thoughtful details." — Titoboy</h2>
+        <div className="absolute bottom-margin-mobile md:bottom-margin-desktop left-margin-mobile md:left-margin-desktop z-20 text-white">
+          <p className="font-label-md text-label-md-mobile md:text-label-md mb-stack-sm uppercase tracking-tighter opacity-80">Process Focused</p>
+          <h2 className="font-headline-md md:font-headline-lg text-headline-md-mobile md:text-headline-lg max-w-xl italic">"Great design begins with thoughtful details." — Titoboy</h2>
         </div>
       </section>
 
